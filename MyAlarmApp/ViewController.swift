@@ -10,27 +10,53 @@ import UserNotifications
 import UIKit
 
 class ViewController: UIViewController {
+    let hour = Calendar.current.component(.hour, from: Date())
+
+    @IBOutlet weak var earlyAlarmLabel: UILabel!
+    @IBOutlet weak var mainAlarmLabel: UILabel!
+    @IBOutlet weak var lateAlarmLabel: UILabel!
     
-    @IBOutlet var table: UITableView!
-    
-    var alarms = [MyAlarm]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.delegate = self
-        table.dataSource = self
+        
+        if 6 < hour && hour < 18 {
+            view.setColorGradientDay1(colorOne: UIColor(red: 118/225, green: 214/255, blue: 1, alpha: 1)  , colorTwo: UIColor.white , colorThree: UIColor.yellow)
+
+            earlyAlarmLabel.textColor = UIColor.darkText
+            mainAlarmLabel.textColor = UIColor.darkText
+            lateAlarmLabel.textColor = UIColor.darkText
+        } else {
+            view.setColorGradientNight(colorOne: UIColor.yellow  , colorTwo: UIColor.purple , colorThree: UIColor(red: 0.0, green: 0.0, blue: 0.5, alpha: 1.0))
+
+            earlyAlarmLabel.textColor = UIColor(red: 249/255, green: 255/255, blue: 225/255, alpha: 1)
+            mainAlarmLabel.textColor = UIColor(red: 249/255, green: 255/255, blue: 225/255, alpha: 1)
+            lateAlarmLabel.textColor = UIColor(red: 249/255, green: 255/255, blue: 225/255, alpha: 1)
+        }
+
+    }
+    
+    
+    func makeNotification(title: String, notificationTime: Date, identifier: String) {
+        var content = UNMutableNotificationContent()
+        content.title = title
+        content.sound = .default
+        content.body = "Alarm"
+
+        var trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.hour, .minute], from: notificationTime), repeats: false)
+        var mainRequest = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(mainRequest, withCompletionHandler: { error in
+            if error != nil {
+                print("something went wrong")
+            }
+        })
+
+
+
     }
     
     @IBAction func didTapAdd() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: { success, error in
-            if success {
-                
-            }
-            else if error != nil {
-                print("error")
-            }
-        })
         
         guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
             return
@@ -38,27 +64,32 @@ class ViewController: UIViewController {
         
         vc.title = "New Alarm"
         vc.navigationItem.largeTitleDisplayMode = .never
-        vc.completion = { title, date in
+        
+
+    
+        vc.completion = { date in
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
-                let new = MyAlarm(title: title, date: date, identifier: "id_/(date)")
-                self.alarms.append(new)
-                self.table.reloadData()
                 
-                let content = UNMutableNotificationContent()
-                content.title = "Alarm"
-                content.sound = .default
-                content.body = "Alarm"
+                let mainTime = date
+                print("\(mainTime)")
+                let formatter = DateFormatter()
+                formatter.dateFormat  = "h:mm a"
+                self.mainAlarmLabel.text = formatter.string(from: date)
                 
-                let targetDate = date
-                let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
-                let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)
-                UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-                    if error != nil {
-                        print("something went wrong")
-                    }
-                })
+                let earlyTime = mainTime.addingTimeInterval(-30)
+                self.earlyAlarmLabel.text = formatter.string(from: earlyTime)
                 
+                let lateTime = mainTime.addingTimeInterval(30)
+                self.lateAlarmLabel.text = formatter.string(from: lateTime)
+                
+    
+                
+                self.makeNotification(title: "main", notificationTime: mainTime, identifier: "main")
+                self.makeNotification(title:"early", notificationTime: earlyTime, identifier: "early")
+                self.makeNotification(title:"late", notificationTime: lateTime, identifier: "late")
+                
+
             }
             
         }
@@ -66,40 +97,6 @@ class ViewController: UIViewController {
             
     }
     
-}
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-extension ViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alarms.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        let date = alarms[indexPath.row].date
-        let formatter = DateFormatter()
-        formatter.dateFormat  = "h:mm a"
-        
-        cell.textLabel?.text = formatter.string(from: date)
-        cell.detailTextLabel?.text = alarms[indexPath.row].title
-        
-        return cell
-    }
-}
-
-struct MyAlarm {
-    let title: String
-    let date: Date
-    let identifier: String
 }

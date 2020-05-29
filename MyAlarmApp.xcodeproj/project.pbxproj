@@ -14,6 +14,7 @@
 		609D24D224784834002EA543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609D24D124784834002EA543 /* Assets.xcassets */; };
 		609D24D524784834002EA543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609D24D324784834002EA543 /* LaunchScreen.storyboard */; };
 		609D24DD24784B76002EA543 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D24DC24784B76002EA543 /* AddViewController.swift */; };
+		609D24E124819568002EA543 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D24E024819567002EA543 /* Gradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		609D24D424784834002EA543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		609D24D624784834002EA543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		609D24DC24784B76002EA543 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		609D24E024819567002EA543 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				609D24CA24784831002EA543 /* SceneDelegate.swift */,
 				609D24CC24784831002EA543 /* ViewController.swift */,
 				609D24DC24784B76002EA543 /* AddViewController.swift */,
+				609D24E024819567002EA543 /* Gradient.swift */,
 				609D24CE24784831002EA543 /* Main.storyboard */,
 				609D24D124784834002EA543 /* Assets.xcassets */,
 				609D24D324784834002EA543 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609D24E124819568002EA543 /* Gradient.swift in Sources */,
 				609D24CD24784831002EA543 /* ViewController.swift in Sources */,
 				609D24C924784831002EA543 /* AppDelegate.swift in Sources */,
 				609D24DD24784B76002EA543 /* AddViewController.swift in Sources */,

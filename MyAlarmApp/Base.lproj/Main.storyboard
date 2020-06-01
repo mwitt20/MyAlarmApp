@@ -7,6 +7,107 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Snooze View Controller-->
+        <scene sceneID="gkp-D4-mhq">
+            <objects>
+                <viewController storyboardIdentifier="snoozeVc" id="Vbr-h2-abR" customClass="SnoozeViewController" customModule="MyAlarmApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m0z-pr-QCx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qbe-AX-CLu">
+                                <rect key="frame" x="0.0" y="200" width="414" height="408"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1FI-th-IY3">
+                                        <rect key="frame" x="150" y="0.0" width="114" height="136"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAb-hi-W33">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="136"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uSl-F0-PFj">
+                                                <rect key="frame" x="65" y="52.5" width="51" height="31"/>
+                                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ycW-Y2-blp">
+                                        <rect key="frame" x="68" y="136" width="278" height="136"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Eb-qi-wvs">
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="136"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g73-LX-uxX">
+                                                <rect key="frame" x="229" y="52.5" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6BL-9T-J19">
+                                        <rect key="frame" x="150" y="272" width="114" height="136"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvI-AW-gUp">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="136"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iwC-sz-vw5">
+                                                <rect key="frame" x="65" y="52.5" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn the Alarms off to Snooze" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-In-rlN">
+                                <rect key="frame" x="0.0" y="20" width="414" height="100"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrT-dC-Llk">
+                                <rect key="frame" x="140" y="668" width="134" height="40"/>
+                                <state key="normal" title="Snooze"/>
+                                <connections>
+                                    <action selector="snoozePressed:" destination="Vbr-h2-abR" eventType="touchUpInside" id="zIY-Gh-i6Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qbe-AX-CLu" firstAttribute="top" secondItem="uFE-5c-duo" secondAttribute="top" constant="200" id="4vO-6J-CpM"/>
+                            <constraint firstItem="qbe-AX-CLu" firstAttribute="top" secondItem="YJv-In-rlN" secondAttribute="bottom" constant="80" id="7FI-kL-CfE"/>
+                            <constraint firstItem="uFE-5c-duo" firstAttribute="bottom" secondItem="qbe-AX-CLu" secondAttribute="bottom" constant="200" id="EqX-BM-iUd"/>
+                            <constraint firstItem="uFE-5c-duo" firstAttribute="bottom" secondItem="RrT-dC-Llk" secondAttribute="bottom" constant="100" id="FYm-IT-4EY"/>
+                            <constraint firstItem="uFE-5c-duo" firstAttribute="trailing" secondItem="qbe-AX-CLu" secondAttribute="trailing" id="Ial-O1-Hjh"/>
+                            <constraint firstItem="qbe-AX-CLu" firstAttribute="leading" secondItem="uFE-5c-duo" secondAttribute="leading" id="Lt0-ps-7zK"/>
+                            <constraint firstItem="uFE-5c-duo" firstAttribute="trailing" secondItem="YJv-In-rlN" secondAttribute="trailing" id="YM8-u6-Ogd"/>
+                            <constraint firstItem="RrT-dC-Llk" firstAttribute="top" secondItem="qbe-AX-CLu" secondAttribute="bottom" constant="60" id="aDc-H2-5mH"/>
+                            <constraint firstItem="YJv-In-rlN" firstAttribute="leading" secondItem="uFE-5c-duo" secondAttribute="leading" id="tyK-0G-yBg"/>
+                            <constraint firstItem="YJv-In-rlN" firstAttribute="top" secondItem="uFE-5c-duo" secondAttribute="top" constant="20" id="usD-we-kPT"/>
+                            <constraint firstItem="uFE-5c-duo" firstAttribute="trailing" secondItem="RrT-dC-Llk" secondAttribute="trailing" constant="140" id="yKL-C6-oev"/>
+                            <constraint firstItem="RrT-dC-Llk" firstAttribute="leading" secondItem="uFE-5c-duo" secondAttribute="leading" constant="140" id="z3W-ga-j4j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uFE-5c-duo"/>
+                    </view>
+                    <connections>
+                        <outlet property="earlyAlarmLabel" destination="DAb-hi-W33" id="m89-Ou-2Ta"/>
+                        <outlet property="earlySwitch" destination="uSl-F0-PFj" id="EUN-t0-ox6"/>
+                        <outlet property="lateAlarmLabel" destination="lvI-AW-gUp" id="hcw-L2-ovD"/>
+                        <outlet property="lateSwitch" destination="iwC-sz-vw5" id="zco-Ph-dIf"/>
+                        <outlet property="mainAlarmLabel" destination="4Eb-qi-wvs" id="6Gf-ht-dF3"/>
+                        <outlet property="mainSwitch" destination="g73-LX-uxX" id="ZWd-1K-vnL"/>
+                        <outlet property="snoozeButton" destination="RrT-dC-Llk" id="bgC-FS-a6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbk-le-pvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250.7246376811595" y="-557.14285714285711"/>
+        </scene>
         <!--You Snooze You Win-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -38,13 +139,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cao-xi-dgR">
+                                <rect key="frame" x="140" y="717" width="134" height="45"/>
+                                <state key="normal" title="Snooze"/>
+                                <connections>
+                                    <segue destination="Vbr-h2-abR" kind="presentation" id="or4-yZ-FP4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5sT-mo-DKn" secondAttribute="trailing" id="0iz-s5-wQO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cao-xi-dgR" secondAttribute="bottom" constant="100" id="1ID-xg-6na"/>
+                            <constraint firstItem="Cao-xi-dgR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="KWf-gh-2Qa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5sT-mo-DKn" secondAttribute="bottom" constant="200" id="KeJ-4Q-2QT"/>
+                            <constraint firstItem="Cao-xi-dgR" firstAttribute="top" secondItem="5sT-mo-DKn" secondAttribute="bottom" constant="55" id="SKz-Zo-1lj"/>
                             <constraint firstItem="5sT-mo-DKn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WaK-he-CTn"/>
                             <constraint firstItem="5sT-mo-DKn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="cdL-mv-IhU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cao-xi-dgR" secondAttribute="trailing" constant="140" id="e5u-vB-yFP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -60,11 +172,12 @@
                         <outlet property="earlyAlarmLabel" destination="W4Y-nL-jC2" id="8Iu-Jj-RBJ"/>
                         <outlet property="lateAlarmLabel" destination="oOk-Vf-PVX" id="gxV-Yk-q8Q"/>
                         <outlet property="mainAlarmLabel" destination="swu-wG-Tld" id="KQB-EX-fyd"/>
+                        <outlet property="snoozeButton" destination="Cao-xi-dgR" id="3o0-Tp-7fu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="80"/>
+            <point key="canvasLocation" x="818.84057971014499" y="150.66964285714286"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="YZB-fe-Cgv">
@@ -119,7 +232,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oe-bZ-oYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+            <point key="canvasLocation" x="-32" y="151"/>
         </scene>
     </scenes>
 </document>

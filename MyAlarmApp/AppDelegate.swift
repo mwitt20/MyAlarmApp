@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
 
@@ -18,8 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) { (granted, error) in
         }
         
+        
         return true
     }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 

@@ -15,6 +15,8 @@
 		609D24D524784834002EA543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609D24D324784834002EA543 /* LaunchScreen.storyboard */; };
 		609D24DD24784B76002EA543 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D24DC24784B76002EA543 /* AddViewController.swift */; };
 		609D24E124819568002EA543 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D24E024819567002EA543 /* Gradient.swift */; };
+		609D24E32484E382002EA543 /* Alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 609D24E22484E381002EA543 /* Alarm.mp3 */; };
+		609D24E52484FCCC002EA543 /* SnoozeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D24E42484FCCC002EA543 /* SnoozeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		609D24D624784834002EA543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		609D24DC24784B76002EA543 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		609D24E024819567002EA543 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		609D24E22484E381002EA543 /* Alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Alarm.mp3; path = "../New Group/Alarm.mp3"; sourceTree = "<group>"; };
+		609D24E42484FCCC002EA543 /* SnoozeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoozeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +65,26 @@
 			isa = PBXGroup;
 			children = (
 				609D24C824784831002EA543 /* AppDelegate.swift */,
+				609D24E42484FCCC002EA543 /* SnoozeViewController.swift */,
 				609D24CA24784831002EA543 /* SceneDelegate.swift */,
 				609D24CC24784831002EA543 /* ViewController.swift */,
 				609D24DC24784B76002EA543 /* AddViewController.swift */,
 				609D24E024819567002EA543 /* Gradient.swift */,
 				609D24CE24784831002EA543 /* Main.storyboard */,
+				609D24E6248528FE002EA543 /* Music */,
 				609D24D124784834002EA543 /* Assets.xcassets */,
 				609D24D324784834002EA543 /* LaunchScreen.storyboard */,
 				609D24D624784834002EA543 /* Info.plist */,
 			);
 			path = MyAlarmApp;
+			sourceTree = "<group>";
+		};
+		609D24E6248528FE002EA543 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				609D24E22484E381002EA543 /* Alarm.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				609D24D524784834002EA543 /* LaunchScreen.storyboard in Resources */,
+				609D24E32484E382002EA543 /* Alarm.mp3 in Resources */,
 				609D24D224784834002EA543 /* Assets.xcassets in Resources */,
 				609D24D024784831002EA543 /* Main.storyboard in Resources */,
 			);
@@ -146,6 +161,7 @@
 			files = (
 				609D24E124819568002EA543 /* Gradient.swift in Sources */,
 				609D24CD24784831002EA543 /* ViewController.swift in Sources */,
+				609D24E52484FCCC002EA543 /* SnoozeViewController.swift in Sources */,
 				609D24C924784831002EA543 /* AppDelegate.swift in Sources */,
 				609D24DD24784B76002EA543 /* AddViewController.swift in Sources */,
 				609D24CB24784831002EA543 /* SceneDelegate.swift in Sources */,
